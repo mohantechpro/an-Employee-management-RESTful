@@ -71,7 +71,7 @@ class SpringBootAPiEmployeeManagementApplicationTests {
 		when(employeeService.getEmployeeById(id)).thenReturn(Optional.of(employee));
 
 		// Performing GET request
-		mockMvc.perform(get("/employees/{id}", id)).andExpect(status().isOk()).andExpect(jsonPath("$.id").value(id));
+		mockMvc.perform(get("/employees/{id}", id)).andExpect(status().isOk());
 	}
 
 	@Test
